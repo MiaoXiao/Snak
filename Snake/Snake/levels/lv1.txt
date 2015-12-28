@@ -1,0 +1,12 @@
+Player .5 .85
+TurnTile .5 .65
+
+TurnTile .65 .65
+TurnTile .65 .55
+TurnTile .35 .55
+TurnTile .35 .45
+TurnTile .5 .45
+
+Star .5 .25
+
+Barrier .25 .25 .25 .75

@@ -23,6 +23,8 @@ using namespace std;
 int mpos_x = -1;
 int mpos_y = -1;
 
+int starsLeft;
+int cl = 1;
 int FPS = 60;
 int main(int argc, char** argv)
 {
@@ -164,7 +166,7 @@ int main(int argc, char** argv)
 	//construct player
 	Player player(2.5, event_queue);
 	//construct level
-	Level currentLevel(0, &player, arrows, coins);
+	Level currentLevel(cl, &player, arrows, coins);
 	cout << player.posBegin.x << " " << player.posBegin.y << " " << player.posEnd.x << " " << player.posEnd.y << endl;
 	al_start_timer(timer);
 	while (!done)
@@ -193,7 +195,7 @@ int main(int argc, char** argv)
 					currentLevel.start();
 					break;
 				case ALLEGRO_KEY_R:
-					currentLevel.reset();
+					currentLevel.init(cl);
 					break;
 				}
 				break;
@@ -206,7 +208,7 @@ int main(int argc, char** argv)
 				if (events.mouse.button & 1) // left click
 				{
 					vector<TurnTile> t = currentLevel.returnTurnTiles();
-					for (unsigned int i = 0; i < t.size(); ++i)
+					for (unsigned int i = 0; i < t.size() && !currentLevel.gameStart; ++i)
 					{
 						//cout << "detect click" << endl;
 						t[i].checkClick(mpos_x, mpos_y);
@@ -240,7 +242,22 @@ int main(int argc, char** argv)
 			al_clear_to_color(al_map_rgb(255, 255, 255));
 		}
 
+		//check if won
+		starsLeft = 0;
+		for (unsigned int i = 0; i < currentLevel.returnCollectables().size(); ++i)
+		{
+			if (!currentLevel.returnCollectables()[i].obtained && 
+				currentLevel.returnCollectables()[i].type == STAR) starsLeft++;
+		}
+		if (starsLeft == 0)
+		{
+			cout << "Level Complete!" << endl;
+			al_rest(5.0);
+			currentLevel.init(++cl);
+		}
+
 	}
+	al_destroy_event_queue(event_queue);
 	al_destroy_display(display);
 	al_destroy_bitmap(arrowup);
 	al_destroy_bitmap(arrowdown);

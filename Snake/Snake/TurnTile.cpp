@@ -48,7 +48,7 @@ void TurnTile::checkClick(float mpos_x, float mpos_y)
 			arrow = LEFT;
 			break;
 		case LEFT: //display up arrow
-			arrow = UP;
+			arrow = NONE;
 			break;
 		case RIGHT: //display down arrow
 			arrow = DOWN;

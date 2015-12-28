@@ -82,8 +82,6 @@ public:
 	void reset();
 	//updates all visible entities
 	void updateLevel();
-	//restarts level
-	void restartLevel();
 
 	//getters and setts
 	std::vector<Barrier> returnWalls();

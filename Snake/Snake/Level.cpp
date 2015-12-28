@@ -6,6 +6,7 @@ using namespace std;
 void Level::init(int l)
 {
 	gameStart = false;
+	player->isDead = false;
 
 	player->tailList.clear();
 	turnTiles.clear();
@@ -181,12 +182,6 @@ void Level::updateLevel()
 	for (unsigned int i = 0; i < walls.size(); ++i) walls[i].updateBarrier();
 	for (unsigned int i = 0; i < turnTiles.size(); ++i) turnTiles[i].updateTurnTile();
 	for (unsigned int i = 0; i < collectables.size(); ++i) if (!collectables[i].obtained) collectables[i].updateCollectable();
-}
-
-//restarts level
-void Level::restartLevel()
-{
-
 }
 
 vector<Barrier> Level::returnWalls() { return walls; }

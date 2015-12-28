@@ -196,8 +196,8 @@ vector<Collectable> Player::collideCollectable(vector<Collectable> c)
 	
 	for (unsigned int i = 0; i < c.size(); ++i)
 	{
-		if (posEnd.x > c[i].posBegin.x && posBegin.x < c[i].posEnd.x &&
-			posEnd.y > c[i].posBegin.y && posBegin.y < c[i].posEnd.y)
+		if (posBegin.x == c[i].posBegin.x &&
+			posBegin.y == c[i].posBegin.y)
 		{
 			cout << "obtained" << endl;
 			c[i].obtained = true;

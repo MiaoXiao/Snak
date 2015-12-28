@@ -38,10 +38,10 @@ public:
 	}
 	void updateCollectable();
 	bool obtained;
-private:
-	
-	int id;
 	int type;
+private:
+	int id;
+	
 	int score;
 	ALLEGRO_BITMAP* image;
 };
