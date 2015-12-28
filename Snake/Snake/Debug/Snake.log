@@ -1,0 +1,21 @@
+﻿  stdafx.cpp
+  TurnTile.cpp
+  Snake.cpp
+c:\users\rica.pengin\documents\visual studio 2015\projects\snake\snake\snake\snake.cpp(47): warning C4101: 'disp_data': unreferenced local variable
+  Player.cpp
+c:\users\rica.pengin\documents\visual studio 2015\projects\snake\snake\snake\player.cpp(132): warning C4101: 'b_min_x': unreferenced local variable
+c:\users\rica.pengin\documents\visual studio 2015\projects\snake\snake\snake\player.cpp(132): warning C4101: 'b_min_y': unreferenced local variable
+c:\users\rica.pengin\documents\visual studio 2015\projects\snake\snake\snake\player.cpp(132): warning C4101: 'b_max_y': unreferenced local variable
+c:\users\rica.pengin\documents\visual studio 2015\projects\snake\snake\snake\player.cpp(132): warning C4101: 'a_max_x': unreferenced local variable
+c:\users\rica.pengin\documents\visual studio 2015\projects\snake\snake\snake\player.cpp(132): warning C4101: 'a_min_x': unreferenced local variable
+c:\users\rica.pengin\documents\visual studio 2015\projects\snake\snake\snake\player.cpp(132): warning C4101: 'a_max_y': unreferenced local variable
+c:\users\rica.pengin\documents\visual studio 2015\projects\snake\snake\snake\player.cpp(132): warning C4101: 'b_max_x': unreferenced local variable
+c:\users\rica.pengin\documents\visual studio 2015\projects\snake\snake\snake\player.cpp(130): warning C4101: 'loop': unreferenced local variable
+c:\users\rica.pengin\documents\visual studio 2015\projects\snake\snake\snake\player.cpp(132): warning C4101: 'a_min_y': unreferenced local variable
+  Level.cpp
+  Globals.cpp
+  Entity.cpp
+  Collectable.cpp
+  Barrier.cpp
+  Generating Code...
+  Snake.vcxproj -> C:\Users\Rica.PENGIN\Documents\Visual Studio 2015\Projects\Snake\Snake\Debug\Snake.exe
