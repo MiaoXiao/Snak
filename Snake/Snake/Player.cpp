@@ -201,6 +201,7 @@ vector<Collectable> Player::collideCollectable(vector<Collectable> c)
 		{
 			cout << "obtained" << endl;
 			c[i].obtained = true;
+			c[i].playSound();
 		}
 	}
 	return c;

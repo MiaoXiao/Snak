@@ -3,6 +3,8 @@
 #include "Entity.h"
 #include "allegro5/allegro5.h"
 #include "allegro5/allegro_primitives.h"
+#include <allegro5/allegro_audio.h>
+#include <allegro5/allegro_acodec.h>
 
 #include <vector>
 #include <iostream>
@@ -11,8 +13,8 @@
 class TurnTile: public Entity
 {
 public:
-	TurnTile(float x, float y, std::vector<ALLEGRO_BITMAP*> a)
-		:size(size), a(a)
+	TurnTile(float x, float y, bool starting, int oneway, std::vector<ALLEGRO_BITMAP*> a)
+		:starting(starting), oneway(oneway), a(a)
 	{
 		//Entity
 		posBegin.x = x;
@@ -23,6 +25,16 @@ public:
 
 		//Turn Tile
 		arrow = NONE;
+
+		sample = al_load_sample("sounds/click.wav");
+		if (!sample) {
+			std::cout << "click.wav did not load!" << std::endl;
+		}
+
+		if (oneway != -1)
+		{
+			arrow = oneway;
+		}
 	}
 	//draw turn tile
 	void updateTurnTile();
@@ -32,5 +44,8 @@ public:
 	int arrow;
 private:
 	std::vector<ALLEGRO_BITMAP*> a;
+	ALLEGRO_SAMPLE *sample;
+	bool starting;
+	int oneway;
 };
 

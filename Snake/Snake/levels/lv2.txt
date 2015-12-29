@@ -1,0 +1,49 @@
+Barrier .25 .25 .25 .45
+Barrier .25 .60 .25 .75
+
+Barrier .75 .25 .75 .45
+Barrier .75 .6 .75 .75
+
+Barrier .25 .25 .465 .25
+Barrier .55 .25 .75 .25
+
+Barrier .25 .75 .465 .75
+Barrier .55 .75 .75 .75
+
+Barrier .15 .45 .15 .90
+Barrier .15 .90 .55 .90
+Barrier .15 .45 .25 .45
+Barrier .55 .75 .55 .90
+
+Barrier .85 .1 .85 .6
+Barrier .465 .1 .85 .1
+Barrier .85 .6 .75 .6
+Barrier .465 .25 .465 .1
+
+Player .5 .5
+
+TurnTile .5 .65
+TurnTile .5 .325
+TurnTile .5 .16
+TurnTile .5 .83
+
+TurnTile .65 .5
+TurnTile .325 .5
+TurnTile .18 .5
+TurnTile .80 .5
+
+TurnTile .325 .325
+TurnTile .325 .65
+
+TurnTile .65 .325
+
+TurnTile .65 .65
+
+TurnTile .80 .16
+TurnTile .18 .83
+
+Bronze .42 .34
+Bronze .65 .55
+
+Star .18 .65
+Star .80 .325

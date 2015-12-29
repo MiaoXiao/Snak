@@ -1,38 +1,18 @@
-Player .75 .75
+Player .5 .70
 
+TurnTile .5 .60
 
-TurnTile .75 .5
+TurnTile .65 .60
+TurnTile .65 .40
+TurnTile .35 .40
+TurnTile .35 .20
+TurnTile .5 .20
 
-TurnTile .5 .5
+Star .5 .10
+Barrier .30 .08 .30 .75
+Barrier .725 .08 .725 .75
+Barrier .30 .08 .725 .08
+Barrier .30 .75 .725 .75
 
-TurnTile .25 .5
-TurnTile .75 .25
-TurnTile .25 .75
-
-TurnTile .5 .35
-TurnTile .25 .35
-TurnTile .75 .35
-
-TurnTile .5 .65
-TurnTile .25 .65
-TurnTile .75 .65
-
-TurnTile .25 .75
-
-Bronze .5 .45
-Bronze .5 .55
-Bronze .25 .45
-Bronze .25 .55
-Bronze .75 .45
-Bronze .75 .55
-
-Star .25 .25
-
-Barrier .225 .20 .225 .825
-
-Barrier .80 .20
- .80 .825
-Barrier .225 .225 .80 .225
-Barrier .28 .725 .80 .725
-Barrier .225 .3 .74 .3
-Barrier .225 .825 .80 .825
+Barrier .3 .5 .625 .5
+Barrier .4 .325 .725 .325

@@ -1,3 +1,3 @@
 ﻿  Snake.cpp
-c:\users\rica.pengin\documents\visual studio 2015\projects\snake\snake\snake\snake.cpp(49): warning C4101: 'disp_data': unreferenced local variable
+c:\users\rica.pengin\documents\visual studio 2015\projects\snake\snake\snake\snake.cpp(69): warning C4101: 'disp_data': unreferenced local variable
   Snake.vcxproj -> C:\Users\Rica.PENGIN\Documents\Visual Studio 2015\Projects\Snake\Snake\Debug\Snake.exe

@@ -1,7 +1,11 @@
 #pragma once
 #include "allegro5/allegro5.h"
 #include "allegro5/allegro_primitives.h"
+#include <allegro5/allegro_audio.h>
+#include <allegro5/allegro_acodec.h>
 
+
+#include <iostream>
 #include "Entity.h"
 #include "Globals.h"
 
@@ -35,14 +39,32 @@ public:
 		}
 
 		obtained = false;
+
+		if (type == STAR)
+		{
+			sample = al_load_sample("sounds/star.wav");
+			if (!sample) {
+				std::cout << "star.wav did not load!" << std::endl;
+			}
+		}
+		else
+		{
+			sample = al_load_sample("sounds/coin.wav");
+			if (!sample) {
+				std::cout << "coin.wav did not load!" << std::endl;
+			}
+		}
+
 	}
 	void updateCollectable();
+	void playSound();
 	bool obtained;
 	int type;
 private:
 	int id;
 	
 	int score;
-	ALLEGRO_BITMAP* image;
+	ALLEGRO_BITMAP *image;
+	ALLEGRO_SAMPLE *sample;
 };
 

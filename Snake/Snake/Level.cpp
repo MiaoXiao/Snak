@@ -56,7 +56,7 @@ void Level::init(int l)
 				xscreen = tile.pos[tempy][tempx].x;
 				yscreen = tile.pos[tempy][tempx].y;
 				player->resetPos(xscreen, yscreen);
-				TurnTile t(xscreen, yscreen, a);
+				TurnTile t(xscreen, yscreen, true, -1, a);
 				//cout << player->posBegin.x << " " << player->posBegin.y << " " << player->posEnd.x << " " << player->posEnd.y << endl;
 				turnTiles.push_back(t);
 				playerpos.x = xscreen;
@@ -70,7 +70,19 @@ void Level::init(int l)
 				tempy *= atof(info.c_str());
 				xscreen = tile.pos[tempy][tempx].x;
 				yscreen = tile.pos[tempy][tempx].y;
-				TurnTile t(xscreen, yscreen, a);
+				TurnTile t(xscreen, yscreen, false, -1, a);
+				turnTiles.push_back(t);
+			}
+			else if (info == "OneWay")
+			{
+				f >> info;
+				tempx *= atof(info.c_str());
+				f >> info;
+				tempy *= atof(info.c_str());
+				xscreen = tile.pos[tempy][tempx].x;
+				yscreen = tile.pos[tempy][tempx].y;
+				f >> info;
+				TurnTile t(xscreen, yscreen, false, atoi(info.c_str()), a);
 				turnTiles.push_back(t);
 			}
 			else if (info == "Bronze")

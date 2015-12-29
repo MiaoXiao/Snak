@@ -7,6 +7,8 @@
 #include "allegro5/allegro_ttf.h"
 #include "allegro5/allegro_image.h"
 #include "allegro5/allegro_primitives.h"
+#include "allegro5/allegro_audio.h"
+#include "allegro5/allegro_acodec.h"
 #include "allegro5/allegro_native_dialog.h"
 
 #include "Player.h"
@@ -24,7 +26,7 @@ int mpos_x = -1;
 int mpos_y = -1;
 
 int starsLeft;
-int cl = 1;
+int cl = 3;
 int FPS = 60;
 int main(int argc, char** argv)
 {
@@ -34,6 +36,24 @@ int main(int argc, char** argv)
 	if (!al_init())
 	{
 		al_show_native_message_box(display, "Error", "Error", "Failed to initialize allegro!",
+			NULL, ALLEGRO_MESSAGEBOX_ERROR);
+		return EXIT_FAILURE;
+	}
+	//init audio
+	if (!al_install_audio()) {
+		al_show_native_message_box(display, "Error", "Error", "Failed to initialize audio!",
+			NULL, ALLEGRO_MESSAGEBOX_ERROR);
+		return EXIT_FAILURE;
+	}
+	
+	if (!al_init_acodec_addon()) {
+		al_show_native_message_box(display, "Error", "Error", "Failed to initialize audio codecs!",
+			NULL, ALLEGRO_MESSAGEBOX_ERROR);
+		return EXIT_FAILURE;
+	}
+
+	if (!al_reserve_samples(1)) {
+		al_show_native_message_box(display, "Error", "Error", "Failed to reserve samples!",
 			NULL, ALLEGRO_MESSAGEBOX_ERROR);
 		return EXIT_FAILURE;
 	}
