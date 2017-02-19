@@ -20,6 +20,7 @@ void Player::resetPos(float x1, float y1)
 
 void Player::getInput(ALLEGRO_EVENT events)
 {
+	/*
 	switch (events.keyboard.keycode)
 	{
 	case ALLEGRO_KEY_DOWN:
@@ -35,7 +36,7 @@ void Player::getInput(ALLEGRO_EVENT events)
 		dir = LEFT;
 		break;
 	}
-	
+	*/
 }
 
 //update player position
@@ -53,6 +54,7 @@ void Player::updatePlayer()
 		}
 
 		//get next player position
+		
 		switch (dir)
 		{
 		case DOWN:
@@ -72,7 +74,7 @@ void Player::updatePlayer()
 			posEnd.x += moveSpeed;
 			break;
 		}
-
+		
 		//cout << posBegin.x << " " << posBegin.y << endl;
 		//create new tail
 		Barrier b;

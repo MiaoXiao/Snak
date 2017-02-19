@@ -171,8 +171,12 @@ void Level::init(int l)
 void Level::start()
 {
 	cout << "Game has started." << endl;
-	gameStart = true;
-	player->isDead = false;
+	if (!gameStart)
+	{
+		gameStart = true;
+		player->isDead = false;
+	}
+
 }
 
 void Level::reset()

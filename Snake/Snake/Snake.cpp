@@ -26,7 +26,7 @@ int mpos_x = -1;
 int mpos_y = -1;
 
 int starsLeft;
-int cl = 3;
+int cl = 0;
 int FPS = 60;
 int main(int argc, char** argv)
 {
@@ -67,7 +67,7 @@ int main(int argc, char** argv)
 
 	//Init Display and window name
 	ALLEGRO_DISPLAY_MODE disp_data;
-	al_set_app_name("Hello World from Allegro 5.1!");
+	al_set_app_name("Snak Prototype by Rica Feng!");
 	display = al_create_display(SCREENWIDTH, SCREENHEIGHT);
 	if (!display)
 	{
@@ -79,7 +79,7 @@ int main(int argc, char** argv)
 	//Init fonts
 	al_init_font_addon();
 	al_init_ttf_addon();
-	ALLEGRO_FONT *font24 = al_load_font("fonts/ariblk.ttf", 24, 0);
+	ALLEGRO_FONT *font24 = al_load_font("fonts/ariblk.ttf", 16, 0);
 	if (!font24)
 	{
 		al_show_native_message_box(display, "Error", "Error", "Failed to load font!",
@@ -196,7 +196,13 @@ int main(int argc, char** argv)
 		//draw images
 		//al_draw_bitmap(image, 200, 200, 0);
 		//draw fonts
-		//al_draw_text(font24, Color.yellow, 50, 50, 0, "Hi!!!!");
+		al_draw_text(font24, al_map_rgb(0, 0, 0), 10, 10, 0, "Click on the yellow turn tiles to");
+		al_draw_text(font24, al_map_rgb(0, 0, 0), 10, 30, 0, "change its direction.");
+		al_draw_text(font24, al_map_rgb(0, 0, 0), 10, 50, 0, "Press Enter to start level.");
+		al_draw_text(font24, al_map_rgb(0, 0, 0), 10, 70, 0, "Press R to restart level.");
+		al_draw_text(font24, al_map_rgb(0, 0, 0), 10, 90, 0, "Press Esc to quit.");
+		al_draw_text(font24, al_map_rgb(0, 0, 0), 10, 130, 0, "Get all the stars.");
+		al_draw_text(font24, al_map_rgb(0, 0, 0), 10, 150, 0, "Coins are optional.");
 		while (!al_is_event_queue_empty(event_queue))
 		{
 			ALLEGRO_EVENT events;
@@ -272,8 +278,15 @@ int main(int argc, char** argv)
 		if (starsLeft == 0)
 		{
 			cout << "Level Complete!" << endl;
-			al_rest(5.0);
-			currentLevel.init(++cl);
+			al_rest(3.0);
+			if (cl == 3)
+			{
+				done = true;
+			}
+			else
+			{
+				currentLevel.init(++cl);
+			}
 		}
 
 	}
